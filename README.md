@@ -1,6 +1,6 @@
 # Data_Science
 
-To view any of the ipython notebooks contained in this repo visit the following link:
+To view any of the ipython notebooks contained in this repo please visit the following link:
 
 http://nbviewer.jupyter.org/github/samverma/Data_science/tree/master/
 
