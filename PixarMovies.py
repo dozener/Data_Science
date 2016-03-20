@@ -42,7 +42,7 @@ filtered_pixar = pixar_movies.loc[0:13]
 # 
 # filtered_pixar is the pixar_movies database with the last row dropped since the data for the last movie, 'Inside Out', wasn't reliably available at this time.
 
-# In[11]:
+# In[5]:
 
 pixar_movies.set_index('Movie',inplace=True)
 filtered_pixar.set_index('Movie',inplace=True)
@@ -50,7 +50,7 @@ filtered_pixar.set_index('Movie',inplace=True)
 
 # Here both of the DataFrames are set with an index of the 'Movie' column. The inplace attribute is set to True so that the DataFrames are altered as is instead of returning a new DataFrame object.
 
-# In[15]:
+# In[6]:
 
 critics_reviews = pd.DataFrame(data=pixar_movies,columns=['RT Score','IMDB Score','Metacritic Score'])
 critics_reviews.plot(kind='bar',rot=90,figsize=(13,5),legend='reverse')
@@ -59,7 +59,7 @@ plt.show()
 
 # The three movie score columns are plotted to see how they comparably rate the films. 
 
-# In[14]:
+# In[7]:
 
 critics_reviews.plot(kind='box',figsize=(9,5))
 plt.show()
@@ -67,7 +67,7 @@ plt.show()
 
 # Here a box plot shows the distrubution of scores based on the review source. Rotten Tomatoes tends to give higher scores to Pixar movies while Metacritic's scores are across a wider range.
 
-# In[15]:
+# In[8]:
 
 revenue_proportions = pd.DataFrame(data=pixar_movies,columns=['Domestic %','International %'])
 revenue_proportions.plot(kind='bar',stacked=True)
@@ -76,7 +76,7 @@ plt.show()
 
 # A stacked bar graph shows the split between earning from domestic and international audiences. A quick look tells us that Ratatouille, Cars 2, and Monsters University had the highest percentage of their earnings internationally.
 
-# In[19]:
+# In[9]:
 
 prod_gross = pd.DataFrame(data=pixar_movies,columns=['Production Budget','Worldwide Gross'])
 prod_gross.plot(rot=90)
@@ -85,7 +85,7 @@ plt.show()
 
 # This simple line plot shows the relationship between production budget and the worldwide gross amount for each movie.
 
-# In[22]:
+# In[10]:
 
 oscars = pd.DataFrame(data=pixar_movies, columns=['Oscars Nominated','Oscars Won'])
 oscars.plot(kind='bar')
@@ -94,7 +94,7 @@ plt.show()
 
 # The bar graph here compares the number of Oscars a movie was nominated for to the number it actually won. WALL-E was nominated for six though won one while The Incredibles was nominated for four and ended up winning two.
 
-# In[51]:
+# In[11]:
 
 adg_correlate = pd.DataFrame(data=pixar_movies)
 ac = sns.PairGrid(data=adg_correlate,x_vars=['Length','Year Released','RT Score','IMDB Score','Metacritic Score'],y_vars=['Adjusted Domestic Gross'],aspect=1.5,size=2)
